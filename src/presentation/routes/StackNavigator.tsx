@@ -1,11 +1,11 @@
 import React from "react";
 // import { createNativeStackNavigator } from "@react-navigation/stack";
 import { createStackNavigator } from "@react-navigation/stack";
-import { HomeScreen } from "../screens/home/HomeScreen";
 import { ProductsScreen } from "../screens/products/ProductsScreen";
 import { SettingsScreen } from "../screens/settings/SettingsScreen";
 import { ProductScreen } from "../screens/products/ProductScreen";
 import { ProfileScreen } from "../profile/ProfileScreen";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 // El rootstackparams es un type o interfaz que define que parametros se envien a cada pantalla
 export type RootStackParams = {
   Home: undefined;
@@ -16,6 +16,17 @@ export type RootStackParams = {
 //Se define el stack como si es de tipo<RootStackParams>
 // const Stack = createNativeStackNavigator<RootStackParams>();
 const Stack = createStackNavigator<RootStackParams>();
+const Tab = createBottomTabNavigator();
+
+const Tabs = () => {
+  return (
+    <Tab.Navigator>
+      {/* <Tab.Screen name="Home" component={HomeScreen} /> */}
+      <Tab.Screen name="My Home" component={ProductsScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
+    </Tab.Navigator>
+  );
+};
 export const StackNavigator = (): React.JSX.Element => {
   return (
     <Stack.Navigator
@@ -30,7 +41,7 @@ export const StackNavigator = (): React.JSX.Element => {
     >
       <Stack.Screen
         name="Home"
-        component={HomeScreen}
+        component={Tabs}
         options={{
           title: "My home",
           headerTitleAlign: "center",
