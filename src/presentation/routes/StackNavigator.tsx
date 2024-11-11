@@ -24,7 +24,7 @@ export const StackNavigator = (): React.JSX.Element => {
         headerShown: true,
         headerShadowVisible: true,
         headerStyle: {
-          backgroundColor: "#b8b8b8",
+          // backgroundColor: "#b8b8b8",
         },
       }}
     >
