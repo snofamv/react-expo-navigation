@@ -25,6 +25,15 @@ export const globalStyles = StyleSheet.create({
         width:'100%',
         alignItems:'center',
     },
+    hamburgerButton:{
+        // backgroundColor: globalColors.primary,
+        color:'black',
+        borderRadius: 5,
+        padding:10,
+        marginTop:10,
+        width:100,
+        alignItems:'center',
+    },
     buttonText:{
         color: globalColors.background,
         fontSize:18,
