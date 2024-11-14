@@ -10,6 +10,7 @@ import { ProfileScreen } from "../screens/profile/ProfileScreen";
 import { StackNavigator } from "./StackNavigator";
 import { globalColors } from "../theme/theme";
 import { useWindowDimensions, View, Text } from "react-native";
+import { BottomTabNavigator } from "./BottomTabNavigator";
 
 const Drawer = createDrawerNavigator();
 const EmptyView = () => (
@@ -24,7 +25,7 @@ export const SideMenuNavigator = () => {
       drawerContent={(props) => <CustomDrawerContent {...props} />}
       screenOptions={{
         drawerType: dimensions.height >= 760 ? "slide" : "permanent", //Cambia el estilo de transicion del drawer
-        drawerStyle: dimensions.height >= 760 ? {} : {maxWidth:230},
+        drawerStyle: dimensions.height >= 760 ? {} : { maxWidth: 230 },
         headerShown: false,
         drawerActiveBackgroundColor: globalColors.primary,
         drawerActiveTintColor: "white",
@@ -35,9 +36,10 @@ export const SideMenuNavigator = () => {
         },
       }}
     >
-      <Drawer.Screen name="StackNavigator" component={StackNavigator} />
+      {/* <Drawer.Screen name="StackNavigator" component={StackNavigator} /> */}
+      <Drawer.Screen name="Tabs" component={BottomTabNavigator} />
       <Drawer.Screen name="Profile" component={ProfileScreen} />
-      <Drawer.Screen name="Logout" component={EmptyView} />
+      {/* <Drawer.Screen name="Logout" component={EmptyView} /> */}
     </Drawer.Navigator>
   );
 };
