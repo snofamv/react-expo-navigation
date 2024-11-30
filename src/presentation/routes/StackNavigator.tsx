@@ -21,7 +21,7 @@ export const StackNavigator = (): React.JSX.Element => {
     <Stack.Navigator
       initialRouteName="Home"
       screenOptions={{
-        headerShown: true,
+        // headerShown: true,
         headerShadowVisible: true,
         headerStyle: {
           // backgroundColor: "#b8b8b8",
@@ -35,6 +35,7 @@ export const StackNavigator = (): React.JSX.Element => {
           title: "My home",
           headerTitleAlign: "center",
           headerTitle: "Home page",
+          headerShown: false
         }}
       />
       <Stack.Screen name="Products" component={ProductsScreen} />

@@ -11,6 +11,8 @@ import { StackNavigator } from "./StackNavigator";
 import { globalColors } from "../theme/theme";
 import { useWindowDimensions, View, Text } from "react-native";
 import { BottomTabNavigator } from "./BottomTabNavigator";
+import TopTabNavigator from "./TopTabNavigator";
+import { Ionicons } from "@expo/vector-icons";
 
 const Drawer = createDrawerNavigator();
 const EmptyView = () => (
@@ -37,8 +39,25 @@ export const SideMenuNavigator = () => {
       }}
     >
       {/* <Drawer.Screen name="StackNavigator" component={StackNavigator} /> */}
-      <Drawer.Screen name="Tabs" component={BottomTabNavigator} />
-      <Drawer.Screen name="Profile" component={ProfileScreen} />
+      {/* <Drawer.Screen name="TopTabs" component={TopTabNavigator} /> */}
+      <Drawer.Screen
+        name="Tabs"
+        component={BottomTabNavigator}
+        options={{
+          drawerIcon: ({ color }) => (
+            <Ionicons name="apps-outline" size={24} color={color} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          drawerIcon: ({ color }) => (
+            <Ionicons name="person-outline" size={24} color={color} />
+          ),
+        }}
+      />
       {/* <Drawer.Screen name="Logout" component={EmptyView} /> */}
     </Drawer.Navigator>
   );

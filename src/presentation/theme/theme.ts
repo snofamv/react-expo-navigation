@@ -43,3 +43,5 @@ export const globalStyles = StyleSheet.create({
         fontSize:30,
     },
 });
+
+
